@@ -28,12 +28,14 @@ export const SigninForm = () => {
             "Use 8 or more characters with a mix of letters, numbers and symbols",
           path: [],
         }
-      ),
-    checkbox: z
-      .boolean()
-      .refine((value) => value === true, {
-        message: "Please accept the terms and conditions to finish the signup",
+      )
+      .refine((value) => value.length >= 8, {
+        message:
+          "Use 8 or more characters with a mix of letters, numbers and symbols",
       }),
+    checkbox: z.boolean().refine((value) => value === true, {
+      message: "Please accept the terms and conditions to finish the signup",
+    }),
   });
 
   type ValidationSchemaType = z.infer<typeof schema>;
