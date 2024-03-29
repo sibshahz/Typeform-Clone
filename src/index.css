@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*Font Loading*/
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-Medium.eot');
+  src: local('Apercu Pro Medium'), local('ApercuPro-Medium'),
+      url('assets/fonts/ApercuPro-Medium.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-Medium.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-Medium.woff') format('woff'),
+      url('assets/fonts/ApercuPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-MediumItalic.eot');
+  src: local('Apercu Pro Medium Italic'), local('ApercuPro-MediumItalic'),
+      url('assets/fonts/ApercuPro-MediumItalic.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-MediumItalic.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-MediumItalic.woff') format('woff'),
+      url('assets/fonts/ApercuPro-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-ExtraLight.eot');
+  src: local('Apercu Pro ExtraLight'), local('ApercuPro-ExtraLight'),
+      url('assets/fonts/ApercuPro-ExtraLight.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-ExtraLight.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-ExtraLight.woff') format('woff'),
+      url('assets/fonts/ApercuPro-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-Black.eot');
+  src: local('Apercu Pro Black'), local('ApercuPro-Black'),
+      url('assets/fonts/ApercuPro-Black.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-Black.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-Black.woff') format('woff'),
+      url('assets/fonts/ApercuPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-Bold.eot');
+  src: local('Apercu Pro Bold'), local('ApercuPro-Bold'),
+      url('assets/fonts/ApercuPro-Bold.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-Bold.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-Bold.woff') format('woff'),
+      url('assets/fonts/ApercuPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-BoldItalic.eot');
+  src: local('Apercu Pro Bold Italic'), local('ApercuPro-BoldItalic'),
+      url('assets/fonts/ApercuPro-BoldItalic.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-BoldItalic.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-BoldItalic.woff') format('woff'),
+      url('assets/fonts/ApercuPro-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-Thin.eot');
+  src: local('Apercu Pro Thin'), local('ApercuPro-Thin'),
+      url('assets/fonts/ApercuPro-Thin.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-Thin.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-Thin.woff') format('woff'),
+      url('assets/fonts/ApercuPro-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-ThinItalic.eot');
+  src: local('Apercu Pro Thin Italic'), local('ApercuPro-ThinItalic'),
+      url('assets/fonts/ApercuPro-ThinItalic.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-ThinItalic.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-ThinItalic.woff') format('woff'),
+      url('assets/fonts/ApercuPro-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-Regular.eot');
+  src: local('Apercu Pro Regular'), local('ApercuPro-Regular'),
+      url('assets/fonts/ApercuPro-Regular.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-Regular.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-Regular.woff') format('woff'),
+      url('assets/fonts/ApercuPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-Italic.eot');
+  src: local('Apercu Pro Italic'), local('ApercuPro-Italic'),
+      url('assets/fonts/ApercuPro-Italic.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-Italic.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-Italic.woff') format('woff'),
+      url('assets/fonts/ApercuPro-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-ExtraLightItalic.eot');
+  src: local('Apercu Pro ExtraLight Italic'), local('ApercuPro-ExtraLightItalic'),
+      url('assets/fonts/ApercuPro-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-ExtraLightItalic.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-ExtraLightItalic.woff') format('woff'),
+      url('assets/fonts/ApercuPro-ExtraLightItalic.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-Light.eot');
+  src: local('Apercu Pro Light'), local('ApercuPro-Light'),
+      url('assets/fonts/ApercuPro-Light.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-Light.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-Light.woff') format('woff'),
+      url('assets/fonts/ApercuPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-LightItalic.eot');
+  src: local('Apercu Pro Light Italic'), local('ApercuPro-LightItalic'),
+      url('assets/fonts/ApercuPro-LightItalic.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-LightItalic.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-LightItalic.woff') format('woff'),
+      url('assets/fonts/ApercuPro-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Apercu-Pro';
+  src: url('assets/fonts/ApercuPro-BlackItalic.eot');
+  src: local('Apercu Pro Black Italic'), local('ApercuPro-BlackItalic'),
+      url('assets/fonts/ApercuPro-BlackItalic.eot?#iefix') format('embedded-opentype'),
+      url('assets/fonts/ApercuPro-BlackItalic.woff2') format('woff2'),
+      url('assets/fonts/ApercuPro-BlackItalic.woff') format('woff'),
+      url('assets/fonts/ApercuPro-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+@layer base {
+  html {
+    font-family: 'Apercu-Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
