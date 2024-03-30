@@ -6,6 +6,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import WarningIcon from "../icons/warning";
+import { useSpring, animated } from "@react-spring/web";
 
 export const SignupForm = () => {
   const schema = z.object({
@@ -55,9 +56,29 @@ export const SignupForm = () => {
   };
 
   const [showOptions, setShowOptions] = useState(false);
-  
+
+  const [springs, api] = useSpring(() => ({
+    from: {
+      opacity: 0,
+      height: 0,
+    },
+  }));
+  const handleClick = () => {
+    setShowOptions((value) => !value);
+    api.start({
+      from: {
+        opacity: showOptions ? 1 : 0,
+        height: showOptions ? 330 : 0,
+      },
+      to: {
+        height: showOptions ? 0 : 330,
+        opacity: showOptions ? 0 : 1,
+      },
+    });
+  };
+
   return (
-    <div className="bg-white min-h-screen lg:rounded-tl-2xl w-full lg:rounded-bl-2xl flex flex-col items-center">
+    <div className="bg-white min-h-screen lg:rounded-tl-2xl w-full lg:rounded-bl-2xl flex flex-col items-center overflow-hidden">
       <SignupHeader />
       <div className="inline-flex grow flex-col w-full h-full items-center justify-center max-w-[542px]">
         <div className="logo-container flex flex-row gap-2 h-20 items-center">
@@ -156,7 +177,7 @@ export const SignupForm = () => {
 
             <div className="field-group options pl-9 pb-4 pr-2 mb-1">
               <div
-                onClick={() => setShowOptions(!showOptions)}
+                onClick={() => handleClick()}
                 className="flex text-sm leading-8 m-0 flex-row justify-between items-center hover:cursor-pointer"
               >
                 <span className="">See options</span>
@@ -176,93 +197,96 @@ export const SignupForm = () => {
                 </svg>
               </div>
 
-              {showOptions && (
-                <div className="options-panel text-sm flex flex-col gap-3 transition-height duration-500 ease-in-out">
-                  <div className="option-item flex flex-col gap-3">
-                    <div className="option-text">
-                      Get useful tips, inspiration, and offers via
-                      e-communication.
-                    </div>
-                    <div className="option-box flex flex-row gap-5 items-center">
-                      <input
-                        className="w-5 h-5 accent-black transition-all duration-100 ease-out"
-                        type="radio"
-                        id="fav_one_yes"
-                        name="fav_language"
-                        value="Yes"
-                      />
-                      <label htmlFor="fav_one_yes">Yes</label>
-                      <input
-                        className="w-5 h-5 accent-black transition-all duration-100 ease-out"
-                        type="radio"
-                        id="fav_one_no"
-                        name="fav_language"
-                        value="No"
-                      />
-                      <label htmlFor="fav_one_no">No</label>
-                    </div>
+              {/* {showOptions && ( */}
+              <animated.div
+                style={{ ...springs }}
+                className="options-panel text-sm flex flex-col gap-3"
+              >
+                <div className="option-item flex flex-col gap-3">
+                  <div className="option-text">
+                    Get useful tips, inspiration, and offers via
+                    e-communication.
                   </div>
-
-                  <div className="option-item flex flex-col gap-3">
-                    <div className="option-text">
-                      Tailor Typeform to my needs based on my activity.
-                      <a href="#" className="text-select">
-                        See Privacy Policy
-                      </a>
-                    </div>
-                    <div className="option-box flex flex-row gap-5 items-center">
-                      <input
-                        className="w-5 h-5 accent-black transition-all duration-100 ease-out"
-                        type="radio"
-                        id="fav_two_yes"
-                        name="fav_language_two"
-                        value="Yes"
-                      />
-                      <label htmlFor="fav_two_yes">Yes</label>
-                      <input
-                        className="w-5 h-5 accent-black transition-all duration-100 ease-out"
-                        type="radio"
-                        id="fav_two_no"
-                        name="fav_language_two"
-                        value="No"
-                      />
-                      <label htmlFor="fav_two_no">No</label>
-                    </div>
+                  <div className="option-box flex flex-row gap-5 items-center">
+                    <input
+                      className="w-5 h-5 accent-black transition-all duration-100 ease-out"
+                      type="radio"
+                      id="fav_one_yes"
+                      name="fav_language"
+                      value="Yes"
+                    />
+                    <label htmlFor="fav_one_yes">Yes</label>
+                    <input
+                      className="w-5 h-5 accent-black transition-all duration-100 ease-out"
+                      type="radio"
+                      id="fav_one_no"
+                      name="fav_language"
+                      value="No"
+                    />
+                    <label htmlFor="fav_one_no">No</label>
                   </div>
-
-                  <div className="option-item flex flex-col gap-3">
-                    <div className="option-text">
-                      Enrich my data with select third parties for more relevant
-                      content.
-                      <a href="#" className="text-select">
-                        See Privacy Policy
-                      </a>
-                    </div>
-                    <div className="option-box flex flex-row gap-5 items-center">
-                      <input
-                        className="w-5 h-5 accent-black transition-all duration-100 ease-out"
-                        type="radio"
-                        id="fav_three_yes"
-                        name="fav_language_three"
-                        value="Yes"
-                      />
-                      <label htmlFor="fav_three_yes">Yes</label>
-                      <input
-                        className="w-5 h-5 accent-black transition-all duration-100 ease-out"
-                        type="radio"
-                        id="fav_three_no"
-                        name="fav_language_three"
-                        value="No"
-                      />
-                      <label htmlFor="fav_three_no">No</label>
-                    </div>
-                  </div>
-
-                  <p className="text-select">
-                    You can update your preferences in your Profile at any time
-                  </p>
                 </div>
-              )}
+
+                <div className="option-item flex flex-col gap-3">
+                  <div className="option-text">
+                    Tailor Typeform to my needs based on my activity.
+                    <a href="#" className="text-select">
+                      See Privacy Policy
+                    </a>
+                  </div>
+                  <div className="option-box flex flex-row gap-5 items-center">
+                    <input
+                      className="w-5 h-5 accent-black transition-all duration-100 ease-out"
+                      type="radio"
+                      id="fav_two_yes"
+                      name="fav_language_two"
+                      value="Yes"
+                    />
+                    <label htmlFor="fav_two_yes">Yes</label>
+                    <input
+                      className="w-5 h-5 accent-black transition-all duration-100 ease-out"
+                      type="radio"
+                      id="fav_two_no"
+                      name="fav_language_two"
+                      value="No"
+                    />
+                    <label htmlFor="fav_two_no">No</label>
+                  </div>
+                </div>
+
+                <div className="option-item flex flex-col gap-3">
+                  <div className="option-text">
+                    Enrich my data with select third parties for more relevant
+                    content.
+                    <a href="#" className="text-select">
+                      See Privacy Policy
+                    </a>
+                  </div>
+                  <div className="option-box flex flex-row gap-5 items-center">
+                    <input
+                      className="w-5 h-5 accent-black transition-all duration-100 ease-out"
+                      type="radio"
+                      id="fav_three_yes"
+                      name="fav_language_three"
+                      value="Yes"
+                    />
+                    <label htmlFor="fav_three_yes">Yes</label>
+                    <input
+                      className="w-5 h-5 accent-black transition-all duration-100 ease-out"
+                      type="radio"
+                      id="fav_three_no"
+                      name="fav_language_three"
+                      value="No"
+                    />
+                    <label htmlFor="fav_three_no">No</label>
+                  </div>
+                </div>
+
+                <p className="text-select">
+                  You can update your preferences in your Profile at any time
+                </p>
+              </animated.div>
+              {/* // )} */}
             </div>
 
             <div className="field-group mb-4 w-full">
