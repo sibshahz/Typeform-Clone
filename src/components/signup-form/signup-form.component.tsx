@@ -292,7 +292,8 @@ export const SignupForm = () => {
             <div className="field-group mb-4 w-full">
               <button
                 type="submit"
-                className=" w-230 mx-auto block bg-button-bg text-white rounded-[3px] border-none text-base h-10 leading-6 cursor-pointer"
+                onClick={() => handleSubmit}
+                className="hover:cursor-pointer relative w-230 mx-auto block bg-button-bg text-white rounded-[3px] border-none text-base h-10 leading-6 cursor-pointer"
               >
                 Create my free account
               </button>
