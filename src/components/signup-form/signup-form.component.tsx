@@ -1,13 +1,13 @@
 import { useState } from "react";
 import TypeformIcon from "../icons/typeform-icon";
 import TypeformTextIcon from "../icons/typeform-texticon";
-import SigninHeader from "../signin-header/signin-header.component";
+import SignupHeader from "../signup-header/signup-header.component";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import WarningIcon from "../icons/warning";
 
-export const SigninForm = () => {
+export const SignupForm = () => {
   const schema = z.object({
     email: z
       .string()
@@ -55,9 +55,10 @@ export const SigninForm = () => {
   };
 
   const [showOptions, setShowOptions] = useState(false);
+  
   return (
     <div className="bg-white min-h-screen lg:rounded-tl-2xl w-full lg:rounded-bl-2xl flex flex-col items-center">
-      <SigninHeader />
+      <SignupHeader />
       <div className="inline-flex grow flex-col w-full h-full items-center justify-center max-w-[542px]">
         <div className="logo-container flex flex-row gap-2 h-20 items-center">
           <TypeformIcon />

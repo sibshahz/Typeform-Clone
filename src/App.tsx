@@ -1,10 +1,10 @@
-import SignInPage from "./pages/signin"
+import SignupPage from "./pages/signup"
 
 function App() {
 
   return (
     <div>
-      <SignInPage />
+      <SignupPage />
     </div>
   )
 }

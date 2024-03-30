@@ -1,17 +1,17 @@
 import { ProductDisplay } from "../components/product-display/product-display.component";
-import { SigninForm } from "../components/signin-form/signin-form.component";
+import { SignupForm } from "../components/signup-form/signup-form.component";
 
-const SignInPage = () => {
+const SignupPage = () => {
   return (
     <div className="flex flex-row bg-gray-black">
       <div className="basis-44 hidden lg:block">
         <ProductDisplay />
       </div>
       <div className="basis-full lg:basis-56">
-        <SigninForm />
+        <SignupForm />
       </div>
     </div>
   );
 };
 
-export default SignInPage;
+export default SignupPage;

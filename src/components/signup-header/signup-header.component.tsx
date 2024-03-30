@@ -1,6 +1,6 @@
 import SelectComponent from "./select.component";
 
-const SigninHeader = () => {
+const SignupHeader = () => {
   return (
     <div className="flex flex-row justify-between py-3 px-6 items-center w-full">
       <div className="language-selector">
@@ -21,4 +21,4 @@ const SigninHeader = () => {
   );
 };
 
-export default SigninHeader;
+export default SignupHeader;
