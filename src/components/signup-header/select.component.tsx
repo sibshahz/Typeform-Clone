@@ -51,7 +51,7 @@ const SelectComponent = () => {
             className="capitalize flex min-h-8 cursor-pointer hover:bg-light-gray"
             onClick={() => {
               setLanguage("english")
-              , handleClick;
+              , handleClick();
             }}
           >
             <span className="block py-4 px-6 font-extralight text-gray-black text-base leading-normal">
@@ -61,7 +61,7 @@ const SelectComponent = () => {
           <div
             className="capitalize flex min-h-8 cursor-pointer hover:bg-light-gray"
             onClick={() => {
-              setLanguage("español"), handleClick;
+              setLanguage("español"), handleClick();
             }}
           >
             <span className="block py-4 px-6 font-extralight text-gray-black text-base leading-normal">
